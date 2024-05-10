@@ -7,7 +7,9 @@ export function isiTableCollections(results) {
 }
 
 function isiRow(value) {
+
     let content =
+
         isiTabel.replace("#NAMA#", value.collections.name)
             .replace("#LOKASI#", value.location)
             .replace("#EST#", value.establishedYear)
@@ -20,4 +22,7 @@ function isiRow(value) {
             .replace("#WARNA#", getRandomColor())
             .replace(/#WARNALOGO#/g, getRandomColorName());
     addInner("iniTabel", content);
+    console.log(content);
+
+
 }
