@@ -9,7 +9,6 @@ export function isiTableCollections(results) {
 function isiRow(value) {
 
     let content =
-
         isiTabel.replace("#NAMA#", value.collections.name)
             .replace("#LOKASI#", value.location)
             .replace("#EST#", value.establishedYear)
