@@ -3,10 +3,12 @@ import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/
 import { isiTabel } from "../temp/table.js";
 
 export function isiTableCollections(results) {
+    console.log('Results:', results);
     results.forEach(isiRow);
 }
 
 function isiRow(value) {
+    console.log('Value:', value);
     let content =
         isiTabel.replace("#NAMA#", value.name)
             .replace("#LOKASI#", value.location)
@@ -14,9 +16,9 @@ function isiRow(value) {
             .replace("#DESKRIPSI#", value.description)
             .replace("#WEBSITE#", value.website)
             .replace("#HARIKERJA#", value.openingHours)
-            // .replace("#JAMKERJA#", value.jam_kerja ? value.jam_kerja[0].durasi + " jam" : "Belum diatur")
-            // .replace("#JAMMASUK#", value.jam_kerja ? value.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
-            // .replace("#JAMKELUAR#", value.jam_kerja ? value.jam_kerja[0].jam_keluar + " WIB" : "Belum diatur")
+            .replace("#JAMKERJA#", value.jam_kerja ? value.jam_kerja[0].durasi + " jam" : "Belum diatur")
+            .replace("#JAMMASUK#", value.jam_kerja ? value.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
+            .replace("#JAMKELUAR#", value.jam_kerja ? value.jam_kerja[0].jam_keluar + " WIB" : "Belum diatur")
             .replace("#WARNA#", getRandomColor())
             .replace(/#WARNALOGO#/g, getRandomColorName());
     addInner("iniTabel", content);
