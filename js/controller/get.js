@@ -9,10 +9,10 @@ export function isiTableCollections(results) {
 function isiRow(value) {
     let content =
         isiTabel.replace("#NAMA#", value.name)
-            .replace("#NOHP#", value.location)
-            .replace("#JABATAN#", value.establishedYear)
-            .replace("#LOKASI#", value.description)
-            .replace("#STATUS#", value.website)
+            .replace("#LOKASI#", value.location)
+            .replace("#EST#", value.establishedYear)
+            .replace("#DESKRIPSI#", value.description)
+            .replace("#WEBSITE#", value.website)
             .replace("#HARIKERJA#", value.openingHours)
             .replace("#JAMKERJA#", value.jam_kerja ? value.jam_kerja[0].durasi + " jam" : "Belum diatur")
             .replace("#JAMMASUK#", value.jam_kerja ? value.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
