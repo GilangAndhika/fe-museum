@@ -1,7 +1,7 @@
 import { get } from "https://bukulapak.github.io/api/process.js"; 
 import { setInner } from "https://bukulapak.github.io/element/process.js";
 
-let urlAPI = "https://ws-gilang-ats-65a7295ec924.herokuapp.com/museum/collections";
+let urlAPI = "https://ws-gilang-ats-65a7295ec924.herokuapp.com/collections";
 
 get(urlAPI, isiTableCollections);
 
