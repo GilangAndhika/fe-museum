@@ -11,18 +11,18 @@ function isiRow(value) {
       throw new Error('The input value must be a non-empty object.');
     }
   
-    const requiredProperties = ['collections', 'name', 'location', 'establishedYear', 'description', 'website', 'openingHours'];
+    const requiredProperties = [ 'name', 'location', 'establishedYear', 'description', 'website', 'openingHours'];
     requiredProperties.forEach(prop => {
       if (!value.hasOwnProperty(prop) || value[prop] === null || value[prop] === undefined) {
         throw new Error(`Missing required property: ${prop}`);
       }
     });
   
-    if (!value.collections.hasOwnProperty('name') || !value.collections.hasOwnProperty('location') || !value.collections.hasOwnProperty('establishedYear')) {
+    if (!value.hasOwnProperty('name') || !value.hasOwnProperty('location') || !value.hasOwnProperty('establishedYear')) {
       throw new Error('The collections object must have name, location, and establishedYear properties.');
     }
   
-    if (typeof value.collections.name !== 'string' || typeof value.location !== 'string' || typeof value.establishedYear !== 'number') {
+    if (typeof value.name !== 'string' || typeof value.location !== 'string' || typeof value.establishedYear !== 'number') {
       throw new Error('The name, location, and establishedYear properties must be a string and a number, respectively.');
     }
   
@@ -35,7 +35,7 @@ function isiRow(value) {
     }
   
     let content =
-      isiTabel.replace('#NAMA#', value.collections.name)
+      isiTabel.replace('#NAMA#', value.name)
         .replace('#LOKASI#', value.location)
         .replace('#EST#', value.establishedYear)
         .replace('#DESKRIPSI#', value.description)
