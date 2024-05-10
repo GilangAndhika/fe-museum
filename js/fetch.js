@@ -8,7 +8,7 @@ function isiTableCollections(results){
 }
 function isiRow(value) {
     let content = 
-    isiTabel.replace("#NAMA#", value.nama)
+    iniTabel.replace("#NAMA#", value.nama)
             .replace("#NOHP#", value.location)
             .replace("#JABATAN#", value.establishedYear)
             .replace("#LOKASI#", value.description)
