@@ -30,10 +30,10 @@ function isiRow(result) {
             .replace("#DESKRIPSI#", result.description)
             .replace("#WEBSITE#", result.website)
             .replace("#JAMOPERASI#", result.openingHours)
-            .replace("#KARYA#", result.items ? result.items[0].name : "-")
-            .replace("#SENIMAN#", result.items ? result.items[0].artist : "-")
-            .replace("#DESKRIPSIKARYA#", result.items ? result.items[0].description : "-")
-            .replace("#TAHUN#", result.items ? result.items[0].year : "-")
+            .replace("#KARYA#", result.items ? (result.items[0].name || "-") : "-")
+            .replace("#SENIMAN#", result.items ? (result.items[0].artist || "-") : "-")
+            .replace("#DESKRIPSIKARYA#", result.items ? (result.items[0].description || "-") : "-")
+            .replace("#TAHUN#", result.items ? (result.items[0].year || "-") : "-")
             .replace("#WARNA#", getRandomColor())
             .replace(/#WARNALOGO#/g, getRandomColorName());
     addInner("iniTabel", content);
