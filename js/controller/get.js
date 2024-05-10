@@ -21,18 +21,18 @@ export function isiTableCollections(results) {
     convertedResults.forEach(isiRow);
 }
 
-function isiRow(result) {
-    console.log('Result:', result);
+function isiRow(value) {
+    console.log('Value:', value);
     let content =
-        isiTabel.replace("#NAMA#", result.name)
-            .replace("#LOKASI#", result.location)
-            .replace("#EST#", result.establishedYear)
-            .replace("#DESKRIPSI#", result.description)
-            .replace("#WEBSITE#", result.website)
-            .replace("#HARIKERJA#", result.openingHours)
-            .replace("#JAMKERJA#", result.jam_kerja ? result.jam_kerja[0].durasi + " jam" : "Belum diatur")
-            .replace("#JAMMASUK#", result.jam_kerja ? result.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
-            .replace("#JAMKELUAR#", result.jam_kerja ? result.jam_kerja[0].jam_keluar + " WIB" : "Belum diatur")
+        isiTabel.replace("#NAMA#", value.name)
+            .replace("#LOKASI#", value.location)
+            .replace("#EST#", value.establishedYear)
+            .replace("#DESKRIPSI#", value.description)
+            .replace("#WEBSITE#", value.website)
+            .replace("#HARIKERJA#", value.openingHours)
+            .replace("#JAMKERJA#", value.jam_kerja ? value.jam_kerja[0].durasi + " jam" : "Belum diatur")
+            .replace("#JAMMASUK#", value.jam_kerja ? value.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
+            .replace("#JAMKELUAR#", value.jam_kerja ? value.jam_kerja[0].jam_keluar + " WIB" : "Belum diatur")
             .replace("#WARNA#", getRandomColor())
             .replace(/#WARNALOGO#/g, getRandomColorName());
     addInner("iniTabel", content);
