@@ -6,10 +6,10 @@ export function isiTablePresensi(results) {
 }
 function isiRow(value) {
     let content =
-        isiTabel.replace("#NAMA#", value.biodata.nama)
-            .replace("#NOHP#", value.biodata.phone_number)
-            .replace("#JABATAN#", value.biodata.jabatan)
-            .replace("#LOKASI#", value.location)
+        isiTabel.replace("#NAMA#", value.nama)
+            .replace("#NOHP#", value.location)
+            .replace("#JABATAN#", value.establishedYear)
+            .replace("#LOKASI#", value.description)
             .replace("#STATUS#", value.checkin)
             .replace("#HARIKERJA#", value.biodata.hari_kerja)
             .replace("#JAMKERJA#", value.biodata.jam_kerja? value.biodata.jam_kerja[0].durasi + " jam" : "Belum diatur") 
