@@ -4,16 +4,28 @@ import { isiTabel } from "../temp/table.js";
 
 // Mengubah struktur objek dari MongoDB agar sesuai dengan yang diharapkan
 function convertMongoDBData(results) {
-    return results.map(result => ({
-        name: result.name,
-        location: result.location,
-        establishedYear: result.establishedYear,
-        description: result.description,
-        website: result.website,
-        openingHours: result.openingHours,
-        jam_kerja: result.jam_kerja // Properti jam_kerja diambil langsung dari MongoDB
-    }));
+    return results.map(result => {
+        // Mendapatkan nilai properti yang diinginkan dari objek yang diterima
+        const name = result.find(item => item.Key === 'name')?.Value || '';
+        const location = result.find(item => item.Key === 'location')?.Value || '';
+        const establishedYear = result.find(item => item.Key === 'establishedYear')?.Value || '';
+        const description = result.find(item => item.Key === 'description')?.Value || '';
+        const website = result.find(item => item.Key === 'website')?.Value || '';
+        const openingHours = result.find(item => item.Key === 'openingHours')?.Value || '';
+        const jam_kerja = result.find(item => item.Key === 'jam_kerja')?.Value || '';
+
+        return {
+            name,
+            location,
+            establishedYear,
+            description,
+            website,
+            openingHours,
+            jam_kerja
+        };
+    });
 }
+
 
 export function isiTableCollections(results) {
     console.log('Results:', results);
