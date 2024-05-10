@@ -3,17 +3,17 @@ import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/
 import { isiTabel } from "../temp/table.js";
 
 // Mengubah struktur objek dari MongoDB agar sesuai dengan yang diharapkan
-function convertMongoDBData(results) {
-    return results.map(result => ({
-        name: result.name,
-        location: result.location,
-        establishedYear: result.establishedYear,
-        description: result.description,
-        website: result.website,
-        openingHours: result.openingHours,
-        jam_kerja: result.jam_kerja // Properti jam_kerja diambil langsung dari MongoDB
-    }));
-}
+// function convertMongoDBData(results) {
+//     return results.map(result => ({
+//         name: result.name,
+//         location: result.location,
+//         establishedYear: result.establishedYear,
+//         description: result.description,
+//         website: result.website,
+//         openingHours: result.openingHours,
+//         jam_kerja: result.jam_kerja // Properti jam_kerja diambil langsung dari MongoDB
+//     }));
+// }
 
 export function isiTableCollections(results) {
     console.log('Results:', results);
