@@ -29,7 +29,7 @@ function isiRow(result) {
             .replace("#EST#", result.establishedYear)
             .replace("#DESKRIPSI#", result.description)
             .replace("#WEBSITE#", result.website)
-            .replace("#JAMOPERASI#", result.openingHours)
+            .replace("#HARIKERJA#", result.openingHours)
             .replace("#JAMKERJA#", result.jam_kerja ? result.jam_kerja[0].durasi + " jam" : "Belum diatur")
             .replace("#JAMMASUK#", result.jam_kerja ? result.jam_kerja[0].jam_masuk + " WIB" : "Belum diatur")
             .replace("#JAMKELUAR#", result.jam_kerja ? result.jam_kerja[0].jam_keluar + " WIB" : "Belum diatur")
